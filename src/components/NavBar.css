@@ -1,0 +1,79 @@
+body{
+    background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.freeShipping{
+    background-color: #222222;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    p{
+        color: #b2b2b2;
+    }
+    .rightBox{
+        span{
+            color: #b2b2b2;
+            cursor: pointer;
+            border-width: 1px;
+            border-color:transparent transparent transparent rgba(255, 255, 255, 0.3);
+            border-style: solid;
+            transition: 0.3s;
+        }
+        span:nth-last-child(1){
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        span:hover{
+            color: #007bff;
+        }
+    }
+}
+.navbarContainer{
+    position: relative;
+    .NavBar{
+        position: absolute;
+        bottom: -56px;
+        z-index: 2;
+        .NavLink{
+            color: #333333;
+            transition: 0.3s;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 14px;
+        }
+        
+
+        :nth-child(3 of div) .NavLink{
+            position: relative;
+        }
+
+        :nth-child(3 of div) .NavLink::after {
+            position: absolute;
+            content: 'hot';
+            text-transform: uppercase;
+            background-color: red;
+            color: white;
+            font-size: 10px;
+            right: -10px;
+            top: -15px;
+            padding: 0 4px;
+            border-radius: 5px;
+        }
+
+        .NavLink:hover{
+            color: #007bff;
+        }
+       
+        .icons{
+            :nth-child(1 of a){
+                margin: 0 22px;
+            }
+        }
+    }
+}
+.open{
+    transform: perspective(1000px) rotate3d(0, 1, 0, 40deg) scale(0.5) translateX(-30%);
+}
+.mainDiv{
+    transition: 0.5s;
+}

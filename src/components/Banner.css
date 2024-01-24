@@ -1,0 +1,41 @@
+.bannerBG{
+    position: relative;
+    .BannerParagraph{
+        position: absolute;
+        top: 50%;
+        left: 300px;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: white;
+        font-weight: 400;
+        font-size: 14px;
+        p{
+            color: #333333;
+            font-family: 'Poppins', sans-serif;
+        }
+        :nth-child(1 of p){
+            font-size: 28px;
+            width: fit-content;
+        }
+        :nth-child(2 of p) {
+            font-size: 60px;
+            font-weight: 600;
+            width: fit-content;
+        }
+        .ShopNow{
+            color: #333333;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-transform: uppercase;
+            background-color: #717fe0;
+            text-decoration: none;
+            color: white;
+            border-radius: 15px;
+            transition: 0.3s;
+            &:hover{
+                background-color: black;
+            }
+        }
+    }
+}
