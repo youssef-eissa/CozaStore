@@ -1,5 +1,4 @@
 import Slider from "react-slick"
-
 import banner1 from  './assets/slide-01.jpg.webp'
 import banner2 from  './assets/slide-02.jpg.webp'
 import banner3 from './assets/slide-03.jpg.webp'
@@ -7,17 +6,26 @@ import './Banner.css'
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { CaretRightOutlined } from "@ant-design/icons"
+import { CaretLeftOutlined } from "@ant-design/icons"
 function Banner() {
+
+    function SliderButton({arrow,onClick}:any) {
+        return <div style={{cursor:'pointer'}} className="d-flex align-items-center justify-content-center" onClick={onClick} >{arrow}</div>
+    }
     const [current, setCurrent] = useState<number>(0);
-const settings = {
+    const settings = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
-    speed: 1000,
-    afterChange: (c : number)=>setCurrent(c),
+    autoplaySpeed: 4000,
+        speed: 1000,
+    afterChange: (c: number) => setCurrent(c),
+        pauseOnHover: false,
+    nextArrow: <SliderButton  arrow={<CaretRightOutlined  className="slider-button next   d-flex align-items-center justify-content-center"  />}/>,
+        prevArrow: <SliderButton arrow={<CaretLeftOutlined className="slider-button left d-flex align-items-center justify-content-center"  />} />,
 };
     const animate1 = {
         p1start: {
@@ -123,10 +131,10 @@ const settings = {
     return (
         <div className="container-fluid overflow-hidden">
             <div className="row">
-                <div className="p-0 col-12 ">
-                    <Slider  {...settings} >
+                <div className="p-0 col-12 banner">
+                    <Slider className="BannerSlider"  {...settings} >
                         <div className="bannerBG" >
-                            <img alt="banner" className="img-fluid " src={banner1} />
+                            <img alt="banner" className="img-fluid h-100" src={banner1} />
                             <div className="BannerParagraph d-flex flex-column align-items-center">
                                 <motion.p
                                     animate={current === 0 ? 'p1animate' : 'p1start'}
@@ -150,7 +158,7 @@ const settings = {
                         </div>
 
                         <div className="bannerBG" >
-                            <img alt="banner" className="img-fluid " src={banner2} />
+                            <img alt="banner" className="img-fluid h-100" src={banner2} />
                             <div className="BannerParagraph d-flex flex-column align-items-center">
                                 <motion.p
                                     animate={current === 1 ? 'p1animate' : 'p1start'}
@@ -174,7 +182,7 @@ const settings = {
                         </div>
 
                         <div className="bannerBG" >
-                            <img alt="banner" className="img-fluid " src={banner3} />
+                            <img alt="banner" className="img-fluid h-100" src={banner3} />
                             <div className="BannerParagraph d-flex flex-column align-items-center">
                                 <motion.p
                                     animate={current === 2 ? 'p1animate' : 'p1start'}

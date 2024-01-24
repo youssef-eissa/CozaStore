@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from "react";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const DivRef=useRef<HTMLDivElement>(null)
+  const DivRef = useRef<HTMLDivElement>(null)
+  
   useEffect(() => {
     if(open){
       DivRef.current?.classList.add('open')
@@ -18,7 +19,6 @@ function App() {
   return (
     <div className="mainDiv" ref={DivRef}>
       <NavBar open={open} setOpen={setOpen} />
-      
         <Routes>
         <Route path="/" element={<Home/> } />
       </Routes>

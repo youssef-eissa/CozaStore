@@ -1,4 +1,5 @@
 .bannerBG{
+    height: 900px;
     position: relative;
     .BannerParagraph{
         position: absolute;
@@ -36,6 +37,36 @@
             &:hover{
                 background-color: black;
             }
+        }
+    }
+}
+
+.BannerSlider{
+    position: relative;
+.next {
+        right: 0px;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .slider-button {
+        transition: 0.3s;
+        cursor: pointer !important;
+        position: absolute;
+        height: 50px;
+        right: 0px;
+        width: 100px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 200;
+        border-radius: 10px;
+        color: rgba(0, 0, 0, 0.3) ;
+        font-size: 50px;
+        transition: 0.3s;
+        &:hover {
+            color: #717fe0;
         }
     }
 }
