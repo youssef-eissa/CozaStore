@@ -5,16 +5,45 @@ import { SearchOutlined } from '@ant-design/icons'
 import BadgeCon from './antd/Badgs'
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import MenuAnimation from './MenuAnimation'
+import { useEffect, useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { setSearchOpen } from './Redux/SearchOpen'
 
-type TNavBar = {
-    open: boolean,
-    setOpen: (open: boolean) => void
-}
-function NavBar({open, setOpen}: TNavBar) {
+
+
+
+function NavBar() {
+    const dispatch=useDispatch()
+
+    const FreeShipDiv = useRef<HTMLDivElement>(null)
+    const NavBarRef = useRef<HTMLDivElement>(null)
+    function handleNavBarScroll() {
+        const scroll = window.scrollY
+        if (FreeShipDiv.current && NavBarRef.current) {
+            if (scroll > FreeShipDiv.current.offsetHeight) {
+                NavBarRef.current.classList.add('ActionOnScroll')
+                
+            }  else {
+                NavBarRef.current.classList.remove('ActionOnScroll')
+            }
+            
+        }
+        
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleNavBarScroll)
+        return () => {
+            window.removeEventListener('scroll', handleNavBarScroll)
+        }
+        
+    },[])
+
+
     return (
         <div className='container-fluid navbarContainer '>
             <div className='row d-flex justify-content-center align-items-center flex-column'>
-                <div className='p-0 col-12 d-flex justify-content-center freeShipping  align-items-center '>
+                <div ref={FreeShipDiv} className='p-0 col-12 d-flex justify-content-center freeShipping  align-items-center '>
                     <p className='col-6 m-0'>Free shipping for standard order over $100</p>
                     <div className='col-4 rightBox d-flex'>
                         <span className='px-4 py-2'>Help & FAQs</span>
@@ -23,34 +52,34 @@ function NavBar({open, setOpen}: TNavBar) {
                         <span className='px-4 py-2'>USD</span>
                     </div>
                 </div>
-                <div className='col-10 NavBar d-flex p-0'>
-                    <div className='col-2 logoCon d-flex align-items-center'>
+                <div ref={NavBarRef} className='col-12 NavBar justify-content-center d-flex p-0'>
+                    <div className='col-2 logoCon d-flex align-items-center '>
                         <img alt='logo' className='img-fluid' src={logo}/>
                     </div>
-                    <div className='col-7 d-flex'>
+                    <div className='col-5 d-flex'>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>Home</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>Home</Link>
                         </div>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>shop</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/shop'>shop</Link>
                         </div>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>features</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>features</Link>
                         </div>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>blog</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>blog</Link>
                         </div>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>about</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>about</Link>
                         </div>
                         <div className='p-3'>
-                        <Link className='NavLink' to='/'>contact</Link>
+                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>contact</Link>
                         </div>
                     </div>
                     <div className='col-3 icons d-flex align-items-center justify-content-end'>
-                        <SearchOutlined style={{ fontSize: 25,cursor: 'pointer' }} />
+                        <SearchOutlined onClick={()=>dispatch(setSearchOpen())}  style={{ fontSize: 25,cursor: 'pointer',userSelect: 'none' }} />
                         <BadgeCon to='/' icon={<ShoppingCartOutlined style={{fontSize:25}}/>} />
-                        <MenuAnimation open={open} setOpen={setOpen}/>
+                        <MenuAnimation />
                     </div>
                 </div>
             </div>

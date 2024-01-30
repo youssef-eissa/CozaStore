@@ -1,6 +1,7 @@
+
 .bannerBG{
     height: 900px;
-    position: relative;
+        position: relative;
     .BannerParagraph{
         position: absolute;
         top: 50%;
@@ -43,12 +44,13 @@
 
 .BannerSlider{
     position: relative;
-.next {
-        right: 0px;
+
+    .next {
+        right: -20px !important;
     }
 
     .left {
-        left: 0;
+        left: -20px;
     }
 
     .slider-button {
@@ -60,7 +62,7 @@
         width: 100px;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 200;
+        z-index: 100;
         border-radius: 10px;
         color: rgba(0, 0, 0, 0.3) ;
         font-size: 50px;

@@ -1,27 +1,22 @@
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import { useEffect, useRef, useState } from "react";
+import Search from "./components/Search";
+import Products from "./components/Products";
+
 
 
 function App() {
-  const [open, setOpen] = useState(false);
-  const DivRef = useRef<HTMLDivElement>(null)
-  
-  useEffect(() => {
-    if(open){
-      DivRef.current?.classList.add('open')
-    }else{
-      DivRef.current?.classList.remove('open')
-    }
-  },[open])
+
 
   return (
-    <div className="mainDiv" ref={DivRef}>
-      <NavBar open={open} setOpen={setOpen} />
+      <div >
+      <NavBar  />
         <Routes>
         <Route path="/" element={<Home/> } />
+        <Route path="/shop" element={<Products/> } />
       </Routes>
+      <Search />
     </div>
   );
 }

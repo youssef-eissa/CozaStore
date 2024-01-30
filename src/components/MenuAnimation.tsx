@@ -1,11 +1,10 @@
 import { Twirl as Hamburger } from 'hamburger-react'
 import {  Drawer } from 'antd';
-type TMenu = {
-    open: boolean,
-    setOpen: (open: boolean) => any
-}
-function MenuAnimation({open, setOpen}: TMenu) {
+import { useState } from 'react';
 
+function MenuAnimation() {
+
+  const [open, setOpen] = useState(false);
 
     const showDrawer = () => {
     setOpen(true);
@@ -17,7 +16,7 @@ function MenuAnimation({open, setOpen}: TMenu) {
     return (
     <div className='menuu'>
         <Hamburger onToggle={showDrawer}  toggled={open} distance="sm" size={25} />
-    <Drawer className='ind' title="Menu" style={{ position: 'relative',zIndex: 3,}} onClose={onClose} open={open}>
+    <Drawer  className='ind' title="Menu" style={{ position: 'relative',zIndex: 3,}} onClose={onClose} open={open}>
         <p>Some contents...</p>
         <p>Some contents...</p>
         <p>Some contents...</p>

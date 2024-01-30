@@ -14,6 +14,9 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
+import { SearchStateReducer } from './components/Redux/SearchOpen';
+import { ProductIDReducer } from './components/Redux/ProductID';
+import { OpenOverviewReducer } from './components/Redux/OpenOverview';
 
 
 
@@ -26,6 +29,9 @@ const persistConfig = {
   storage,
 };
 const reducer = combineReducers({
+  SearchOpen: SearchStateReducer,
+  ProductID: ProductIDReducer,
+  OpenOverview:OpenOverviewReducer
 })
 const PersistReducer = persistReducer(persistConfig, reducer);
 
@@ -53,7 +59,5 @@ root.render(
     </QueryClientProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();
