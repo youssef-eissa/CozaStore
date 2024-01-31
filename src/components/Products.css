@@ -2,7 +2,7 @@
    
     background-color: white;
     .CatBox {
-            font-family: poppins;
+            font-family: 'Poppins', sans-serif;
             position: relative;
             border: 1px solid #e6e6e6;
     
@@ -20,7 +20,7 @@
     
                 &:has(h1, span) {
                     color: #333333;
-                    font-family: poppins;
+                    font-family: 'Poppins', sans-serif;
                     z-index: 3;
     
                 }
@@ -83,7 +83,7 @@
                     .categoriesTitle {
                         span {
                             font-size: 15px;
-                            font-family: poppins;
+                            font-family: 'Poppins', sans-serif;
                             font-weight: 600;
                             color: #888888;
                             transition: 0.3s;
@@ -125,7 +125,7 @@
             button{
                 border: none;
                 outline: none;
-                font-family: poppins;
+                font-family: 'Poppins', sans-serif;
                 background-color: white;
                 color: black;
                 border-radius: 50px;
@@ -149,7 +149,7 @@
     .ProductInfo{
         :nth-child(1 of div){
             :where(span){
-                font-family: poppins;
+                font-family: 'Poppins', sans-serif;
                 font-size: 14px;
             }
             :nth-child(1 of span){
@@ -197,7 +197,7 @@
             }
         }
         .overviewInfo{
-            font-family: poppins;
+            font-family: 'Poppins', sans-serif;
             font-size: 24px;
             color: #333333;
             :is(h1){

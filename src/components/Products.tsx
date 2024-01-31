@@ -106,7 +106,7 @@ function Products() {
                 <div ref={ProductsRef} className='col-10 d-flex flex-column align-items-center '>
                     <div className='col-10 d-flex categoriesHeader'>
                         <div className='col-12 d-flex justify-content-center categoriesTitle'>
-                            <span style={categories === 'All categories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats} >All categories</span>
+                            <span style={categories === 'All Categories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats} >All Categories</span>
 
                         <span style={categories === 'Women' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats}>Women</span>
                         <span onClick={GetFilterCats} style={categories === 'Men' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}}>Men</span>

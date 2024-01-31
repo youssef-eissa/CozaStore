@@ -14,8 +14,8 @@ const categories=useSelector((state:{FilterCategories:{FilterCategories:string}}
         const { data:Products,isFetching} = useQuery({
     queryKey: ['products',categories],
         queryFn: getProducts,
-    enabled: categories==='All categories' ||categories==='Women' || categories==='Men'|| categories==='Accessories',
-        select: data => categories === 'All categories' ? data.data.products.filter((product: Product) => product.category === 'tops' || product.category === 'womens-dresses' || product.category === 'womens-shoes' || product.category === 'mens-shirts' || product.category === 'mens-shoes' || product.category === 'mens-watches' || product.category === 'womens-watches' || product.category === 'womens-bags' || product.category === 'sunglasses')
+    enabled: categories==='All Categories' ||categories==='Women' || categories==='Men'|| categories==='Accessories',
+        select: data => categories === 'All Categories' ? data.data.products.filter((product: Product) => product.category === 'tops' || product.category === 'womens-dresses' || product.category === 'womens-shoes' || product.category === 'mens-shirts' || product.category === 'mens-shoes' || product.category === 'mens-watches' || product.category === 'womens-watches' || product.category === 'womens-bags' || product.category === 'sunglasses')
             :
             categories === 'Women'
             ?

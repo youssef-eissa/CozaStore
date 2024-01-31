@@ -3,7 +3,7 @@ import './Footer.css'
 import { FaFacebookF } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaPinterestP } from "react-icons/fa6";
-import {   useState } from 'react';
+import {   MouseEvent, useState } from 'react';
 import { Button } from './styledComponents/Button';
 import icon1 from './assets/icon-pay-01.png'
 import icon2 from './assets/icon-pay-02.png'
@@ -11,12 +11,23 @@ import icon3 from './assets/icon-pay-03.png'
 import icon4 from './assets/icon-pay-04.png'
 import icon5 from './assets/icon-pay-05.png'
 import { CiHeart } from "react-icons/ci";
+import { useDispatch } from 'react-redux';
+import { setFilterCategories } from './Redux/FilterCategories';
 
 
 
 
 function Footer() {
+    const dispatch=useDispatch()
     const [email, setEmail] = useState<string>('')
+    function NavigateToShop(e: MouseEvent<HTMLAnchorElement>) {
+        window.scrollTo(0, 0)
+    
+        dispatch(setFilterCategories(e.currentTarget.innerHTML))
+
+        console.log(e.currentTarget.innerHTML);
+        
+    }
 
     return (
         <div className='container-fluid FooterContainer '>
@@ -25,10 +36,10 @@ function Footer() {
                     <div className='col-12 d-flex FooterBoxes'>
                         <div className='col-3 d-flex flex-column'>
                             <h1 className='mb-4'>Categories</h1>
-                            <Link to='/'>All Categories</Link>
-                            <Link to='/'>Women</Link>
-                            <Link to='/'>Men</Link>
-                            <Link to='/'>Accessories</Link>
+                            <Link onClick={NavigateToShop} to='/shop'>All Categories</Link>
+                            <Link onClick={NavigateToShop} to='/shop'>Women</Link>
+                            <Link onClick={NavigateToShop} to='/ shop'>Men</Link>
+                            <Link onClick={NavigateToShop} to='/shop'>Accessories</Link>
                         </div>
                         <div className='col-3 d-flex flex-column'>
                             <h1 className='mb-4'>Help</h1>
@@ -66,7 +77,7 @@ function Footer() {
                                 <div className='AnimationBar'></div>
                                 
                         </div>
-                            <Button className='mt-3 col-6 d-flex mx-auto' background='#717fe0' color='white' backgroundHover='white' colorHover='#717fe0'>Subscribe</Button>
+                            <Button className='mt-3 col-6 d-flex mx-auto' background='#717fe0' color='white' backgroundhover='white' colorhover='#717fe0'>Subscribe</Button>
                         </div>
                     </div>
                     <div className='col-12 d-flex flex-column p-3 BottomFooter align-items-center'>

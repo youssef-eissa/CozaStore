@@ -14,7 +14,7 @@ import { setProductID } from './Redux/ProductID'
 function Search() {
     const dispatch = useDispatch()
     const ResultsBoxRef=useRef<HTMLDivElement>(null)
-
+    const inputSearchRef=useRef<HTMLInputElement>(null)
     const SearchRef=useRef<HTMLDivElement>(null)
     const [SearchValue, setSearchValue] = useState<string>('')
     const SearchState = useSelector((state: {SearchOpen:{open:boolean}}) => state.SearchOpen.open)
@@ -68,7 +68,11 @@ function Search() {
             }
         }
     }, )
-    
+    useEffect(() => {
+        if(SearchState){
+            inputSearchRef.current?.focus()
+        }
+    },[SearchState])
 
 return (
     <div ref={SearchRef} className="container-fluid SearchContainer">
@@ -80,7 +84,8 @@ return (
                     type="text"
                     placeholder="Search"
                     value={SearchValue}
-                    onChange={e=>setSearchValue(e.target.value)}
+                    onChange={e => setSearchValue(e.target.value)}
+                    ref={inputSearchRef}
                 />
                 <div ref={ResultsBoxRef} className="col-10 d-flex justify-content-start flex-column mt-5  ProductsResult">
                     {productsSearched?.map((product: Product) => {

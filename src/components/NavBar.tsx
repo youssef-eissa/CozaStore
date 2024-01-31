@@ -1,6 +1,6 @@
 import './NavBar.css'
 import logo from '../components/assets/logo-01.png.webp'
-import { Link,useNavigate } from 'react-router-dom'
+import { Link,useLocation,useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
 import BadgeCon from './antd/Badgs'
 import { ShoppingCartOutlined } from '@ant-design/icons';
@@ -13,6 +13,7 @@ import { setSearchOpen } from './Redux/SearchOpen'
 
 
 function NavBar() {
+    const location=useLocation()
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const FreeShipDiv = useRef<HTMLDivElement>(null)
@@ -58,22 +59,16 @@ function NavBar() {
                     </div>
                     <div className='col-5 d-flex'>
                         <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>Home</Link>
+                        <Link style={location.pathname === '/' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>Home</Link>
                         </div>
                         <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/shop'>shop</Link>
+                        <Link style={location.pathname === '/shop' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/shop'>shop</Link>
                         </div>
                         <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>features</Link>
+                        <Link style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/about'>about</Link>
                         </div>
                         <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>blog</Link>
-                        </div>
-                        <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>about</Link>
-                        </div>
-                        <div className='p-3'>
-                        <Link onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>contact</Link>
+                        <Link style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>contact</Link>
                         </div>
                     </div>
                     <div className='col-3 icons d-flex align-items-center justify-content-end'>

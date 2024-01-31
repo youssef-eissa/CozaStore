@@ -17,7 +17,7 @@
                 color: #b2b2b2;
                 transition: 0.3s;
                 margin-bottom: 10px;
-                font-family: poppins;
+                font-family: 'Poppins', sans-serif;
                 &:hover{
                     color: #717fe0;
                 }
@@ -26,7 +26,7 @@
                 font-size: 15px;
                 color: #b2b2b2;
                 margin-bottom: 10px;
-                font-family: poppins;
+                font-family: 'Poppins', sans-serif;
             }
             .inputDiv{
                 position: relative;
@@ -44,7 +44,7 @@
                         background-color: transparent;
                         color: #b2b2b2;
                         font-size: 15px;
-                        font-family: poppins;
+                        font-family: 'Poppins', sans-serif;
                         position: relative;
                       
                         &:focus {
@@ -76,7 +76,7 @@
             font-size: 15px;
             color: #888888;
             margin-bottom: 10px;
-            font-family: poppins;
+            font-family: 'Poppins', sans-serif;
             width: fit-content;
             span{
                 color: #717fe0;

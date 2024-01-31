@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setOpenOverview } from './Redux/OpenOverview'
 import Loader from "./Loader"
 import { Product } from "./types/appTypes"
+import { motion } from "framer-motion"
 
 
 
@@ -55,6 +56,7 @@ function Overview() {
             dispatch(setOpenOverview(false))
         }
     }
+        
     useEffect(() => {
         document.addEventListener('keydown',handleEscClose)
         return () => {
@@ -67,22 +69,22 @@ function Overview() {
         }
     },[product])
 
-    // function closeBox(e: MouseEvent) {
-    //     e.stopPropagation()
-    //     if ( !OverviewBox.current?.contains(e.target as Node)) {
-
-    //         setOpenOverview(false)
-    //     }
-    // }
-    // useEffect(() => {
-    //     document.addEventListener('click', closeBox)
-    //     return () => {
-    //         document.removeEventListener('click', closeBox)
-    //     }
-    // })
+   
     if (isFetching ) {
         return <Loader/>
     }
+    const animate={
+        start:{
+            transform: 'scale(0.5)',
+            opacity:0
+        },
+        animate:{
+            transform: 'scale(1)',
+            opacity:1
+            
+        }
+    }
+
 return (
     <div ref={overViewRef} className='container-fluid overviewContainer'>
         <div className="row d-flex justify-content-center align-items-center h-100">
@@ -96,7 +98,14 @@ return (
                 </div>
                 <div className="col-5  overviewImg">
                     <div className="mainImg col-12 ">
-                        <img alt="img" className="img-fluid h-100 w-100" src={currentImg}/>
+                        <motion.img
+                            initial='start'
+                            animate='animate'
+                            transition={{ duration: 0.5 }}
+                            variants={animate}
+                            key={currentImg}
+                            
+                        alt="img" className="img-fluid h-100 w-100" src={currentImg} />
                     </div>
                 </div>
                 <div className="col-5 overviewInfo d-flex flex-column">
