@@ -17,6 +17,7 @@ import storage from 'redux-persist/lib/storage';
 import { SearchStateReducer } from './components/Redux/SearchOpen';
 import { ProductIDReducer } from './components/Redux/ProductID';
 import { OpenOverviewReducer } from './components/Redux/OpenOverview';
+import { FilterCategoriesReducer } from './components/Redux/FilterCategories';
 
 
 
@@ -31,7 +32,8 @@ const persistConfig = {
 const reducer = combineReducers({
   SearchOpen: SearchStateReducer,
   ProductID: ProductIDReducer,
-  OpenOverview:OpenOverviewReducer
+  OpenOverview: OpenOverviewReducer,
+  FilterCategories:FilterCategoriesReducer
 })
 const PersistReducer = persistReducer(persistConfig, reducer);
 

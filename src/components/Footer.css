@@ -1,0 +1,86 @@
+.FooterContainer{
+    background-color: #222;
+    .FooterBoxes{
+    padding: 75px 32px !important;
+        :is(div){
+            h1{
+                font-size: 15px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 800;
+                color: white;
+                text-transform: uppercase;
+            }
+            a{
+                text-decoration: none;
+                width: fit-content;
+                font-size: 15px;
+                color: #b2b2b2;
+                transition: 0.3s;
+                margin-bottom: 10px;
+                font-family: poppins;
+                &:hover{
+                    color: #717fe0;
+                }
+            }
+            p{
+                font-size: 15px;
+                color: #b2b2b2;
+                margin-bottom: 10px;
+                font-family: poppins;
+            }
+            .inputDiv{
+                position: relative;
+                    border-style: solid;
+                    border-color: transparent transparent rgba(204, 204, 204, 0.2) transparent;
+                    border-width: 0 0 1px 0;
+                    padding-bottom: 5px;
+                    &:has(input:focus) .AnimationBar{
+                        background-color: #717fe0;
+                        width: 100%;
+                    }
+                   
+                input[type='text'] {
+                        border: none;
+                        background-color: transparent;
+                        color: #b2b2b2;
+                        font-size: 15px;
+                        font-family: poppins;
+                        position: relative;
+                      
+                        &:focus {
+                            outline: none;
+                           
+                        }
+                    }
+                    .AnimationBar{
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 1px;
+                        background-color: #717fe0;
+                        transition: 0.3s;
+                    }
+            }
+           
+           
+        }
+        :is(.icons){
+            a{
+                font-size: 18px;
+            }
+        }
+    }
+    .BottomFooter{
+        p{
+            font-size: 15px;
+            color: #888888;
+            margin-bottom: 10px;
+            font-family: poppins;
+            width: fit-content;
+            span{
+                color: #717fe0;
+            }
+        }
+    }
+}

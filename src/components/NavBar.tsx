@@ -1,6 +1,6 @@
 import './NavBar.css'
 import logo from '../components/assets/logo-01.png.webp'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
 import BadgeCon from './antd/Badgs'
 import { ShoppingCartOutlined } from '@ant-design/icons';
@@ -14,7 +14,7 @@ import { setSearchOpen } from './Redux/SearchOpen'
 
 function NavBar() {
     const dispatch=useDispatch()
-
+    const navigate=useNavigate()
     const FreeShipDiv = useRef<HTMLDivElement>(null)
     const NavBarRef = useRef<HTMLDivElement>(null)
     function handleNavBarScroll() {
@@ -54,7 +54,7 @@ function NavBar() {
                 </div>
                 <div ref={NavBarRef} className='col-12 NavBar justify-content-center d-flex p-0'>
                     <div className='col-2 logoCon d-flex align-items-center '>
-                        <img alt='logo' className='img-fluid' src={logo}/>
+                        <img style={{cursor:'pointer'}} onClick={()=>navigate('/')}  alt='logo' className='img-fluid' src={logo}/>
                     </div>
                     <div className='col-5 d-flex'>
                         <div className='p-3'>

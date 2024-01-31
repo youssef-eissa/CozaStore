@@ -26,11 +26,9 @@ function Overview() {
         enabled: OpenOverview,
         select: data => data.data as Product
     })
-    
-   
+
     const [currentImg, setCurrentImg] = useState<string>('')
-   
-    
+
     const OverviewBox=useRef<HTMLDivElement>(null)
 
     const overViewRef=useRef<HTMLDivElement>(null)

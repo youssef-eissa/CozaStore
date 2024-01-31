@@ -3,25 +3,28 @@ import banner1 from './assets/banner-01.jpg.webp'
 import banner2 from './assets/banner-02.jpg'
 import banner3 from './assets/sunglassBanner.webp'
 import { Link, useLocation } from 'react-router-dom'
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 import { Product } from './types/appTypes'
-import { MouseEvent, useEffect, useRef, useState } from 'react'
+import { MouseEvent, useEffect, useRef} from 'react'
 import { motion } from 'framer-motion'
 import Overview from './Overview'
 import { HeartOutlined } from '@ant-design/icons'
-import {  useDispatch } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { setProductID } from './Redux/ProductID'
 import { setOpenOverview } from './Redux/OpenOverview'
 import Loader from './Loader'
-
+import { AllCategories } from './useQuery/API'
+import { setFilterCategories } from './Redux/FilterCategories'
 
 
 
 function Products() {
+    const categories=useSelector((state:{FilterCategories:{FilterCategories:string}})=>state.FilterCategories.FilterCategories)
     const dispatch=useDispatch()
     const location=useLocation()
     const ProductsRef = useRef<HTMLDivElement>(null)
+    
+    const {Products,isFetching}=AllCategories()
+
     useEffect(() => {
         if (ProductsRef.current) {
             if (location.pathname === '/shop') {
@@ -33,34 +36,13 @@ function Products() {
     },)
     
 
-    const [FilterCategories, setFilterCategories] = useState<string>('All categories')
-    function getProducts() {
-    return axios.get('https://dummyjson.com/products?limit=100')
-}
-    const { data:Products,isFetching} = useQuery({
-    queryKey: ['products',FilterCategories],
-        queryFn: getProducts,
-    enabled: FilterCategories==='All categories' ||FilterCategories==='Women' || FilterCategories==='Men'|| FilterCategories==='Accessories',
-        select: data => FilterCategories === 'All categories' ? data.data.products.filter((product: Product) => product.category === 'tops' || product.category === 'womens-dresses' || product.category === 'womens-shoes' || product.category === 'mens-shirts' || product.category === 'mens-shoes' || product.category === 'mens-watches' || product.category === 'womens-watches' || product.category === 'womens-bags' || product.category === 'sunglasses')
-            :
-            FilterCategories === 'Women'
-            ?
-                data.data.products.filter((product: Product) => product.category === 'tops' || product.category === 'womens-dresses' || product.category === 'womens-shoes')
-                
-                : FilterCategories === 'Men' ?
-                data.data.products.filter((product: Product) =>   product.category === 'mens-shirts' || product.category === 'mens-shoes'   )
-                    : FilterCategories === 'Accessories' &&
-
-                    data.data.products.filter((product: Product) => product.category === 'mens-watches' || product.category === 'womens-watches' || product.category === 'womens-bags' || product.category === 'sunglasses'),
-        refetchIntervalInBackground: false,
-        refetchOnWindowFocus: false
-    })
+    
 
     function GetFilterCats(e: MouseEvent<HTMLSpanElement>) {
-        setFilterCategories(e.currentTarget.innerHTML)
+        dispatch(setFilterCategories(e.currentTarget.innerHTML))
     }
 
-    if (isFetching ) {
+    if (isFetching) {
         return <Loader/>
     }
 
@@ -124,11 +106,11 @@ function Products() {
                 <div ref={ProductsRef} className='col-10 d-flex flex-column align-items-center '>
                     <div className='col-10 d-flex categoriesHeader'>
                         <div className='col-12 d-flex justify-content-center categoriesTitle'>
-                            <span style={FilterCategories === 'All categories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats} >All categories</span>
+                            <span style={categories === 'All categories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats} >All categories</span>
 
-                        <span style={FilterCategories === 'Women' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats}>Women</span>
-                        <span onClick={GetFilterCats} style={FilterCategories === 'Men' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}}>Men</span>
-                        <span onClick={GetFilterCats} style={FilterCategories === 'Accessories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}}>Accessories</span>
+                        <span style={categories === 'Women' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats}>Women</span>
+                        <span onClick={GetFilterCats} style={categories === 'Men' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}}>Men</span>
+                        <span onClick={GetFilterCats} style={categories === 'Accessories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}}>Accessories</span>
                         </div>
                         
                     </div>

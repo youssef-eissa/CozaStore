@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import Products from "./components/Products";
+import Footer from "./components/Footer";
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/shop" element={<Products/> } />
       </Routes>
       <Search />
+      <Footer/>
     </div>
   );
 }
