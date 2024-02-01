@@ -35,32 +35,38 @@ function Products() {
         }
     },)
     
-
+   
+   
     
 
     function GetFilterCats(e: MouseEvent<HTMLSpanElement>) {
         dispatch(setFilterCategories(e.currentTarget.innerHTML))
+    }
+        function NavigateToShop(cat:string) {
+            window.scrollTo(0, 0)
+            dispatch(setFilterCategories(cat))
     }
 
     if (isFetching) {
         return <Loader/>
     }
 
+
     return (
         <div className='container-fluid productsContainer pb-5'>
             {location.pathname === '/' &&
             <div className='row d-flex justify-content-center threeBoxes'>
-                <div  className='col-11 mt-5 d-flex justify-content-center column-gap-3'>
+                <div className='col-11 mt-5 d-flex justify-content-center column-gap-3'>
                     <div  className='text-decoration-none col-4 CatBox'>
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner1}/>
                         </div>
-                        <div className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
+                        <div   className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
                             <div>
                                 <h1>Women</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link onClick={()=>NavigateToShop('Women')} to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>
@@ -71,12 +77,12 @@ function Products() {
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner2}/>
                         </div>
-                        <div className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
+                        <div  className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
                             <div>
                                 <h1>Men</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link onClick={()=>NavigateToShop('Men')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>
@@ -87,12 +93,12 @@ function Products() {
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner3}/>
                         </div>
-                        <div className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
+                        <div  className='CatBoxText p-4 col-12 d-flex flex-column justify-content-between'>
                             <div>
-                                <h1>Sunglasses</h1>
+                                <h1>Accessories</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link onClick={()=>NavigateToShop('Accessories')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>
@@ -133,7 +139,7 @@ function Products() {
                             </div>
                             <div className='col-12 d-flex ProductInfo'>
                                 <div className='col-10 d-flex flex-column align-items-start'>
-                                    <span  className='ProductTitle col-12'>{product.title}</span>
+                                    <span className='ProductTitle col-12'>{product.title}</span>
                                     <span className='ProductPrice col-12 mt-2'>${product.price.toFixed(2)}</span>
                                 </div>
                                 <div className='col-2 icon d-flex align-items-center justify-content-center'>

@@ -22,11 +22,7 @@ function Footer() {
     const [email, setEmail] = useState<string>('')
     function NavigateToShop(e: MouseEvent<HTMLAnchorElement>) {
         window.scrollTo(0, 0)
-    
         dispatch(setFilterCategories(e.currentTarget.innerHTML))
-
-        console.log(e.currentTarget.innerHTML);
-        
     }
 
     return (

@@ -1,0 +1,62 @@
+.contact{
+    
+    form{
+        h4{
+            color: #333333;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+        }
+        :where(div):has(input[type='email']){
+            border: 1px solid #e6e6e6;
+            svg{
+                color: #666666;
+                font-size: 30px;
+            }
+            input[type='email']{
+                outline: none;
+                border: none;
+                font-family: 'Poppins', sans-serif;
+                
+            }
+        }
+        textarea{
+                outline: none;
+                border: 1px solid #e6e6e6;
+                font-family: 'Poppins', sans-serif;
+                resize: none;
+                height: 200px !important;
+        }
+    }
+    :nth-child(2 of div){
+       :is(div):has(svg){
+        svg{
+            color: #333333;
+            font-size: 20px;
+        }
+            h5 {
+                    margin: 0;
+                    color: #333333;
+                    font-size: 18px;
+                    font-family: 'Poppins', sans-serif;
+                }
+                p{
+                    color: #888888;
+                    font-size: 15px;
+                    font-family: 'Poppins', sans-serif;
+                    margin-top: 18px;
+                }
+                span{
+                    color: #717fe0;
+                    font-size: 15px;
+                    font-family: 'Poppins', sans-serif;
+                    margin-top: 18px;
+                }
+       }
+    }
+}
+.contact > div{
+            border: 1px solid #e6e6e6;
+}
+.map{
+    height: 400px;
+}

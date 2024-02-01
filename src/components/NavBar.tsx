@@ -68,7 +68,7 @@ function NavBar() {
                         <Link style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/about'>about</Link>
                         </div>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>contact</Link>
+                        <Link style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/contact'>contact</Link>
                         </div>
                     </div>
                     <div className='col-3 icons d-flex align-items-center justify-content-end'>
