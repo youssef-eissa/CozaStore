@@ -1,0 +1,36 @@
+.CartDrawer{
+
+    .ProductBox{
+        .imgBox {
+            height: 80px ;
+        }
+        .productInfo{
+            span{
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif;
+            }
+            :nth-child(1 of span){
+                color: #555555;
+                transition: 0.3s;
+                cursor: pointer;
+                text-transform: capitalize;
+                &:hover{
+                    color: #007bff ;
+                }
+            }
+            :nth-child(2 of span){
+                color: #888888;
+
+            }
+        }
+    }
+    .total{
+        :is(span){
+            color: #222222;
+            font-size: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+    }
+}
+

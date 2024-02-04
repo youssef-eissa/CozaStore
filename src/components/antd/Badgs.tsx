@@ -1,20 +1,20 @@
 import React from 'react';
 import {  Badge } from 'antd';
-import { Link } from 'react-router-dom';
 type TBAdge = {
   icon: any
-  to:string
-
+  open: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  CartsLength:number
 }
 
-function BadgeCon({icon,to}:TBAdge) {
+function BadgeCon({icon,open,setOpen,CartsLength}:TBAdge) {
   return (
-    <Link to={to}>
-      <Badge size='small' color='#717fe0' style={{ fontSize: 10 }} count={3}>
+    <div style={{ cursor: 'pointer' }} className='ms-3' onClick={() => setOpen(!open)} >
+      <Badge  size='small' color='#717fe0' style={{ fontSize: 10 }} count={CartsLength}>
         {icon}
         
     </Badge>
-  </Link>
+  </div>
   )
 }
 

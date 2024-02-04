@@ -14,7 +14,7 @@ function MenuAnimation() {
     setOpen(false);
 };
     return (
-    <div className='menuu'>
+    <div className='menuu d-md-none'>
         <Hamburger onToggle={showDrawer}  toggled={open} distance="sm" size={25} />
     <Drawer  className='ind' title="Menu" style={{ position: 'relative',zIndex: 3,}} onClose={onClose} open={open}>
         <p>Some contents...</p>

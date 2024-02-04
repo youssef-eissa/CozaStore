@@ -1,8 +1,9 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'react-toastify/dist/ReactToastify.css';
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,6 +19,8 @@ import { SearchStateReducer } from './components/Redux/SearchOpen';
 import { ProductIDReducer } from './components/Redux/ProductID';
 import { OpenOverviewReducer } from './components/Redux/OpenOverview';
 import { FilterCategoriesReducer } from './components/Redux/FilterCategories';
+import { UserInfoReducer } from './components/Redux/UserCredentials';
+import { UserReducer } from './components/Redux/TheUser';
 
 
 
@@ -26,14 +29,16 @@ const client = new QueryClient()
 const persistConfig = {
   key: 'root',
   version: 1,
-  whitelist: [''],
+  whitelist: ['TheUser'],
   storage,
 };
 const reducer = combineReducers({
   SearchOpen: SearchStateReducer,
   ProductID: ProductIDReducer,
   OpenOverview: OpenOverviewReducer,
-  FilterCategories:FilterCategoriesReducer
+  FilterCategories:FilterCategoriesReducer,
+  UserInfo:UserInfoReducer,
+  TheUser:UserReducer,
 })
 const PersistReducer = persistReducer(persistConfig, reducer);
 

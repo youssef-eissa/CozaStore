@@ -1,0 +1,37 @@
+
+.tableContainer{
+    font-family: 'Poppins', sans-serif;
+   :is(.HeaderRow,.tableRow){
+    border: 1px solid #e6e6e6;
+    font-size: 15px;
+   }
+}
+.cartTotal{
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #e6e6e6;
+    h4{
+        color: #333333;
+        font-size: 20px;
+        font-weight: 800;
+    }
+    .subtotal{
+        border-bottom: 1px dashed #666666;
+        :nth-child(1 of span){
+            font-weight: 600;
+            font-size: 15px;
+        }
+        :nth-child(2 of span) {
+            font-size: 18px;
+        }
+    }
+    .shipInfo{
+        .userData{
+            :is(div){
+                border-bottom: 1px solid #e6e6e6;
+                padding: 5px 0;
+                
+            }
+        }
+    }
+}
+

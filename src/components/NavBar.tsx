@@ -2,17 +2,21 @@ import './NavBar.css'
 import logo from '../components/assets/logo-01.png.webp'
 import { Link,useLocation,useNavigate } from 'react-router-dom'
 import { SearchOutlined } from '@ant-design/icons'
-import BadgeCon from './antd/Badgs'
-import { ShoppingCartOutlined } from '@ant-design/icons';
 import MenuAnimation from './MenuAnimation'
 import { useEffect, useRef } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setSearchOpen } from './Redux/SearchOpen'
+import { logout } from './Redux/TheUser'
+import Cart from './Cart';
 
 
 
 
 function NavBar() {
+
+
+    const token=useSelector((state:{TheUser:{token:string}})=>state.TheUser.token)
+
     const location=useLocation()
     const dispatch=useDispatch()
     const navigate=useNavigate()
@@ -39,7 +43,13 @@ function NavBar() {
         }
         
     },[])
-
+    function handleLogout() {
+        dispatch(logout())
+        navigate('/')
+        window.location.reload()
+}
+    
+    
 
     return (
         <div className='container-fluid navbarContainer '>
@@ -48,9 +58,10 @@ function NavBar() {
                     <p className='col-6 m-0'>Free shipping for standard order over $100</p>
                     <div className='col-4 rightBox d-flex'>
                         <span className='px-4 py-2'>Help & FAQs</span>
-                        <span className='px-4 py-2'>My Account</span>
+                        <span onClick={()=>navigate('/login')} className='px-4 py-2'>My Account</span>
                         <span className='px-4 py-2'>EN</span>
                         <span className='px-4 py-2'>USD</span>
+                        {token!=='' && <span onClick={handleLogout} className='px-4 py-2'>Logout</span>}
                     </div>
                 </div>
                 <div ref={NavBarRef} className='col-12 NavBar justify-content-center d-flex p-0'>
@@ -73,7 +84,7 @@ function NavBar() {
                     </div>
                     <div className='col-3 icons d-flex align-items-center justify-content-end'>
                         <SearchOutlined onClick={()=>dispatch(setSearchOpen())}  style={{ fontSize: 25,cursor: 'pointer',userSelect: 'none' }} />
-                        <BadgeCon to='/' icon={<ShoppingCartOutlined style={{fontSize:25}}/>} />
+                        <Cart/>
                         <MenuAnimation />
                     </div>
                 </div>

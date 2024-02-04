@@ -7,7 +7,6 @@ import { Product } from './types/appTypes'
 import { MouseEvent, useEffect, useRef} from 'react'
 import { motion } from 'framer-motion'
 import Overview from './Overview'
-import { HeartOutlined } from '@ant-design/icons'
 import {  useDispatch, useSelector } from 'react-redux'
 import { setProductID } from './Redux/ProductID'
 import { setOpenOverview } from './Redux/OpenOverview'
@@ -34,10 +33,7 @@ function Products() {
             }
         }
     },)
-    
-   
-   
-    
+
 
     function GetFilterCats(e: MouseEvent<HTMLSpanElement>) {
         dispatch(setFilterCategories(e.currentTarget.innerHTML))
@@ -143,7 +139,6 @@ function Products() {
                                     <span className='ProductPrice col-12 mt-2'>${product.price.toFixed(2)}</span>
                                 </div>
                                 <div className='col-2 icon d-flex align-items-center justify-content-center'>
-                                    <HeartOutlined />
                                 </div>
                             </div>
                         </motion.div>
