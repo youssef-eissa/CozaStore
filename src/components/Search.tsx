@@ -11,7 +11,9 @@ import { setProductID } from './Redux/ProductID'
 
 
 
+
 function Search() {
+
     const dispatch = useDispatch()
     const ResultsBoxRef=useRef<HTMLDivElement>(null)
     const inputSearchRef=useRef<HTMLInputElement>(null)
@@ -72,7 +74,8 @@ function Search() {
         if(SearchState){
             inputSearchRef.current?.focus()
         }
-    },[SearchState])
+    }, [SearchState])
+   
 
 return (
     <div ref={SearchRef} className="container-fluid SearchContainer">

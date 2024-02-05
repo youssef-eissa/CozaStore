@@ -46,14 +46,13 @@ function Checkout() {
         columns,
         getCoreRowModel:getCoreRowModel()
     })
-    console.log(cart);
     
     
     return (
         <div className='container'>
             <div className='row'>
-                <div className='col-12 p-5 mt-5 d-flex checkout justify-content-between '>
-                    <div className='col-7 tableContainer'>
+                <div className='col-12 p-5 mt-5 d-flex flex-column flex-md-row checkout justify-content-between '>
+                    <div className='col-md-7 col-12 tableContainer'>
                         {table.getHeaderGroups().map((headerGroup: any) => {
                             
                             return <div className='HeaderRow col-12 justify-content-around p-2 d-flex' key={headerGroup.id}>
@@ -80,7 +79,7 @@ function Checkout() {
                         })}
                         </div>
                 </div>
-                    <div className='col-4  cartTotal d-flex p-5 flex-column'>
+                    <div className='col-md-4 col-12 mt-3 mt-md-0 cartTotal d-flex p-md-5 p-1 flex-column'>
                         <h4 className='col-12'>Cart Total</h4>
                         <div className='col-12 d-flex justify-content-between pb-2 subtotal'>
                             <span className='col-6'>Subtotal</span>

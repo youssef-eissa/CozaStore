@@ -1,31 +1,22 @@
 import {   useEffect, useMemo, useRef, useState } from "react"
-import axios from "axios"
-import { useQuery } from "@tanstack/react-query"
+
 import { useDispatch, useSelector } from "react-redux"
 import { setOpenOverview } from './Redux/OpenOverview'
 import Loader from "./Loader"
-import { Product } from "./types/appTypes"
 import { motion } from "framer-motion"
+import { GetProduct } from "./useQuery/API"
 
 
 
 function Overview() {
     const dispatch=useDispatch()
 
-    const ProductID = useSelector((state: { ProductID: { id: number } }) => state.ProductID.id)
+    
     const OpenOverview = useSelector((state: { OpenOverview: { openOverview: boolean } }) => state.OpenOverview.openOverview)
 
-    function getProductOverView() {
 
-        return axios.get(`https://dummyjson.com/products/${ProductID}`)
-    }
 
-    const { data: product ,isFetching } = useQuery({
-        queryKey: ['productOverview',ProductID],
-        queryFn: getProductOverView,
-        enabled: OpenOverview,
-        select: data => data.data as Product
-    })
+   const {product,isFetching}=GetProduct()
 
     const [currentImg, setCurrentImg] = useState<string>('')
 

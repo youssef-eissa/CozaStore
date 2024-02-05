@@ -55,12 +55,12 @@ function NavBar() {
             <div className='row d-flex justify-content-center align-items-center flex-column'>
                 <div ref={FreeShipDiv} className='p-0 col-12 d-flex flex-column flex-md-row justify-content-center freeShipping  align-items-center '>
                     <p className='col-md-6 text-center text-md-start col-12 m-0 p-1 p-md-0'>Free shipping for standard order over $100</p>
-                    <div className='col-md-4 col-12 p-1 p-md-0 rightBox d-flex'>
-                        <span className='px-4 py-2 '>Help & FAQs</span>
-                        <span onClick={()=>navigate('/login')} className='px-4 py-2'>My Account</span>
-                        <span className='px-4 py-2'>EN</span>
-                        <span className='px-4 py-2'>USD</span>
-                        {token!=='' && <span onClick={handleLogout} className='px-4 py-2'>Logout</span>}
+                    <div className='col-md-4 col-12 p-1 p-md-0 rightBox d-flex justify-content-center'>
+                        <span className='px-md-4 px-2 py-2 '>Help & FAQs</span>
+                        <span onClick={()=>navigate(token==='' ? '/login' : '/profile')} className='px-md-4 px-1 py-2'>My Account</span>
+                        <span className='px-md-4 px-2 py-2'>EN</span>
+                        <span className='px-md-4 px-2 py-2'>USD</span>
+                        {token!=='' && <span onClick={handleLogout} className='px-md-4 px-2 py-2'>Logout</span>}
                     </div>
                 </div>
                 <div ref={NavBarRef} className='col-12 NavBar justify-content-md-center justify-content-between d-flex p-0 px-3 px-md-0 '>

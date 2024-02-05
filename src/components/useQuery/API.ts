@@ -114,3 +114,21 @@ export function UserCart() {
     })
     return {cart,isCartSuccess} as { cart: UserCarts[], isCartSuccess: boolean }
 }
+    function getProductOverView(ProductID:number) {
+        return axios.get(`https://dummyjson.com/products/${ProductID}`)
+    }
+export function GetProduct() {
+
+    const ProductID = useSelector((state: { ProductID: { id: number } }) => state.ProductID.id)
+    
+    const OpenOverview = useSelector((state: { OpenOverview: { openOverview: boolean } }) => state.OpenOverview.openOverview)
+    
+        const { data: product ,isFetching } = useQuery({
+        queryKey: ['productOverview',ProductID],
+        queryFn: ()=>getProductOverView(ProductID),
+        enabled: OpenOverview,
+        select: data => data.data as Product
+        })
+   
+    return {product,isFetching}
+}

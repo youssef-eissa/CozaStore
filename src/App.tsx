@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Checkout from "./components/Checkout";
+import Profile from "./components/Profile";
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact/> } />
         <Route path="/login" element={<Login/> } />
         <Route path="/checkout" element={<Checkout/> } />
+        <Route path="/profile" element={<Profile/> } />
       </Routes>
       <Search />
       <Footer/>
