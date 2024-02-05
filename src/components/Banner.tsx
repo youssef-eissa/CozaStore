@@ -4,12 +4,14 @@ import banner2 from  './assets/slide-02.jpg.webp'
 import banner3 from './assets/ssg.webp'
 import './Banner.css'
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { MouseEvent, useState } from "react"
 import { Link } from "react-router-dom"
 import { CaretRightOutlined } from "@ant-design/icons"
 import { CaretLeftOutlined } from "@ant-design/icons"
+import { setFilterCategories } from "./Redux/FilterCategories"
+import { useDispatch } from "react-redux"
 function Banner() {
-
+const dispatch=useDispatch()
     function SliderButton({arrow,onClick}:any) {
         return <div style={{cursor:'pointer'}} className="d-flex align-items-center justify-content-center" onClick={onClick} >{arrow}</div>
     }
@@ -127,7 +129,10 @@ function Banner() {
         }
 
     }
-    
+    function handleNavigation(e:MouseEvent<HTMLAnchorElement>,category:string) {
+        window.scrollTo(0, 0)
+        dispatch(setFilterCategories(category))
+    }
     return (
         <div style={{backgroundColor:'white'}} className="container-fluid overflow-hidden">
             <div className="row">
@@ -151,7 +156,7 @@ function Banner() {
                                     animate={current === 0 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link className="ShopNow py-2 px-4" to='/'>Shop Now</Link>
+                                <Link onClick={(e) => handleNavigation(e,'Women')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>
@@ -175,7 +180,7 @@ function Banner() {
                                     animate={current === 1 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link className="ShopNow py-2 px-4" to='/'>Shop Now</Link>
+                                <Link onClick={(e) => handleNavigation(e,'Men')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>
@@ -188,7 +193,7 @@ function Banner() {
                                     animate={current === 2 ? 'p1animate' : 'p1start'}
                                     variants={animate3}
                                     transition={{ duration: 0.5 }}
-                                    >Sunglasses Collection 2024</motion.p>
+                                    >Accessories Collection 2024</motion.p>
                                 <motion.p
                                 animate={current === 2 ? 'p2animate' : 'p2start'}
                                     variants={animate3}
@@ -199,7 +204,7 @@ function Banner() {
                                     animate={current === 2 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link className="ShopNow py-2 px-4" to='/'>Shop Now</Link>
+                                <Link onClick={(e) => handleNavigation(e,'Accessories')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>

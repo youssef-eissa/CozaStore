@@ -28,7 +28,7 @@ function Search() {
         queryKey: ['product',SearchProduct],
         queryFn: getProduct,
         enabled: SearchProduct[0] !== '',
-        select: data => data.data.products as Product[]
+        select: data => data.data.products.filter((product:Product)=>product.category==='womens-dresses' || product.category==='tops' || product.category==='womens-shoes' || product.category==='mens-shirts' || product.category==='mens-shoes' || product.category==='womens-watches' || product.category==='mens-watches' || product.category==='womens-bags' || product.category==='womens-jewellery' || product.category==='sunglasses')  as Product[]
     })
 
     useEffect(() => {
