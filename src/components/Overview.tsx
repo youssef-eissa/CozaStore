@@ -1,4 +1,4 @@
-import {  useEffect, useMemo, useRef, useState } from "react"
+import {   useEffect, useMemo, useRef, useState } from "react"
 import axios from "axios"
 import { useQuery } from "@tanstack/react-query"
 import { useDispatch, useSelector } from "react-redux"
@@ -14,8 +14,7 @@ function Overview() {
 
     const ProductID = useSelector((state: { ProductID: { id: number } }) => state.ProductID.id)
     const OpenOverview = useSelector((state: { OpenOverview: { openOverview: boolean } }) => state.OpenOverview.openOverview)
-    
-    
+
     function getProductOverView() {
 
         return axios.get(`https://dummyjson.com/products/${ProductID}`)
@@ -69,7 +68,17 @@ function Overview() {
         }
     },[product])
 
-   
+    useEffect(() => {
+        window.addEventListener('click', (e) => {
+
+            if (OverviewBox.current && OpenOverview) {
+                if (!OverviewBox.current.contains(e.target as Node)) {
+                    dispatch(setOpenOverview(false))
+                }
+            }
+    })
+    },[OpenOverview,dispatch])
+
     if (isFetching ) {
         return <Loader/>
     }
@@ -85,18 +94,19 @@ function Overview() {
         }
     }
 
+
 return (
     <div ref={overViewRef} className='container-fluid overviewContainer'>
         <div className="row d-flex justify-content-center align-items-center h-100">
-            <div ref={OverviewBox} className="col-9 rounded overviewBox p-5 d-flex justify-content-between">
-                <div className="col-1 images d-flex flex-column row-gap-3">
+            <div ref={OverviewBox} className="col-9 rounded overviewBox p-5 d-flex flex-column flex-md-row justify-content-between">
+                <div className="col-md-1 col-12 images d-flex flex-md-column flex-row row-gap-3">
                     {product?.images.map((image: string) => {
-                        return <div key={image} className="overviewImageBox col-12 p-1">
+                        return <div key={image} className="overviewImageBox col-md-12 col p-1">
                             <img onClick={() => setCurrentImg(image)} alt="img" className="img-fluid h-100 w-100" src={ image} />
                         </div>
                     })}
                 </div>
-                <div className="col-5  overviewImg">
+                <div className="col-md-5 col-12  overviewImg">
                     <div className="mainImg col-12 ">
                         <motion.img
                             initial='start'
@@ -108,7 +118,7 @@ return (
                         alt="img" className="img-fluid h-100 w-100" src={currentImg} />
                     </div>
                 </div>
-                <div className="col-5 overviewInfo d-flex flex-column">
+                <div className="col-md-5 col-12 overviewInfo d-flex flex-column">
                     <h1 className="col-12">{product?.title}</h1>
                     <div className="col-12 d-flex productPrice">
                         <span>${product?.price.toFixed(2)}</span>

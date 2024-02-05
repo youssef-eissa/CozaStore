@@ -21,7 +21,7 @@ const dispatch=useDispatch()
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
     speed: 1000,
     afterChange: (c: number) => setCurrent(c),
@@ -140,7 +140,7 @@ const dispatch=useDispatch()
                     <Slider className="BannerSlider "  {...settings} >
                         <div className="bannerBG" >
                             <img alt="banner" className="img-fluid h-100 w-100" src={banner1} />
-                            <div className="BannerParagraph d-flex flex-column align-items-center">
+                            <div className="BannerParagraph d-flex flex-column align-items-center ">
                                 <motion.p
                                     animate={current === 0 ? 'p1animate' : 'p1start'}
                                     variants={animate1}

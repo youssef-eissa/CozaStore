@@ -224,5 +224,41 @@
     }
 }
 }
+@media (max-width: 768px){
+.productsContainer{
+.overviewContainer {
+        .overviewBox {
+            .overviewImg {
+                .mainImg {
+                    height: 200px;
+                }
+            }
+          
 
+            .overviewInfo {
+                
 
+                :is(h1) {
+                    font-size: 20px;
+                }
+
+                :has(span):has(del) {
+                    font-size: 14px;
+               
+                }
+
+                :is(p) {
+                    font-size: 12px;
+                }
+
+                :nth-child(2 of div) {
+                    font-size: 13px;
+
+                  
+                }
+
+            }
+        }
+    }
+}
+}

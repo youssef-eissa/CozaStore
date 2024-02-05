@@ -21,8 +21,8 @@ function Contact() {
             </div>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-12 p-5 d-flex justify-content-center contact'>
-                        <div className='col-6 p-5'>
+                    <div className='col-12 p-5 d-flex flex-column flex-md-row justify-content-center contact'>
+                        <div className='col-md-6 col-12 p-md-5 p-2'>
                             <form className='col-12  d-flex flex-column align-items-center'>
                             <h4>Send Us A Message</h4>
                             <div className='col-10 mb-3 d-flex align-items-center p-2'>
@@ -41,10 +41,10 @@ function Contact() {
                                 onChange={(e)=>setMessage(e.target.value)}
                                 placeholder='How can we help you?'
                             />
-                            <Button className='col-10 mt-3' background='black' color='white' colorhover='white' backgroundhover='#717fe0'>Submit</Button>
+                            <Button className='col-md-10 col-8 mt-3' background='black' color='white' colorhover='white' backgroundhover='#717fe0'>Submit</Button>
                         </form>
                         </div>
-                        <div className='col-6 p-5 d-flex flex-column justify-content-center'>
+                        <div className='col-md-6 col-12 p-md-5 p-2 mt-2 d-flex flex-column justify-content-center'>
                             <div className='col-12 d-flex align-items-center'>
                                 <CiLocationOn  className='col-2 align-self-start'/>
                                 <div className='d-flex flex-column col-10'>

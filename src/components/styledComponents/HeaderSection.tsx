@@ -17,4 +17,10 @@ h1{
     font-weight: 700;
     color: white;
 }
+
+@media (max-width: 768px){
+    h1{
+        font-size: 40px;
+    }
+}
 `

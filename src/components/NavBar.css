@@ -54,13 +54,30 @@
         .NavLink:hover{
             color: #007bff !important;
         }
-       
         .icons{
             :nth-child(1 of a){
                 margin: 0 22px;
             }
         }
+        
     }
+}
+.MobileMenu {
+    .NavLink {
+        color: #333333;
+        transition: 0.3s;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 14px;
+        font-weight: bold;
+        user-select: none;
+    }
+    div{
+        text-align: center;
+    }
+    
 }
 
 

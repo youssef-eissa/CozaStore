@@ -52,8 +52,8 @@ function Products() {
         <div className='container-fluid productsContainer pb-5'>
             {location.pathname === '/' &&
             <div className='row d-flex justify-content-center threeBoxes'>
-                <div className='col-11 mt-5 d-flex justify-content-center column-gap-3'>
-                    <div  className='text-decoration-none col-4 CatBox'>
+                <div className='col-11 mt-5 d-flex flex-column flex-md-row justify-content-center column-gap-3 row-gap-3'>
+                    <div  className='text-decoration-none col-md-4 col-12 CatBox'>
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner1}/>
                         </div>
@@ -69,7 +69,7 @@ function Products() {
                         </div>
                         
                     </div>
-                    <div  className='text-decoration-none col-4 CatBox'>
+                    <div  className='text-decoration-none col-md-4 col-12 CatBox'>
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner2}/>
                         </div>
@@ -85,7 +85,7 @@ function Products() {
                         </div>
                         
                 </div>
-                    <div  className='text-decoration-none col-4 CatBox'>
+                    <div  className='text-decoration-none col-md-4 col-12 CatBox'>
                         <div className='col-12 imgBoxBanner'>
                             <img alt='img' className='img-fluid w-100 h-100' src={banner3}/>
                         </div>
@@ -105,8 +105,8 @@ function Products() {
             </div>
             }
             <div  className='row d-flex flex-column align-items-center categoriesRow mt-5'>
-                <div ref={ProductsRef} className='col-10 d-flex flex-column align-items-center '>
-                    <div className='col-10 d-flex categoriesHeader'>
+                <div ref={ProductsRef} className='col-md-10 col-12 d-flex flex-column align-items-center '>
+                    <div className='col-md-10 col-12 d-flex categoriesHeader'>
                         <div className='col-12 d-flex justify-content-center categoriesTitle'>
                             <span style={categories === 'All Categories' ? {color:'black',borderBottom:'1px solid black'}:{color:'#888888',border:'none'}} onClick={GetFilterCats} >All Categories</span>
 
@@ -126,7 +126,7 @@ function Products() {
                             whileInView={{transform:'scale(1)'}}
                             viewport={{once:true}}
                             transition={{duration:0.5}}
-                            key={product.id} className='col-3 d-flex flex-column ProductCard'>
+                            key={product.id} className='col-md-3 col-12 d-flex flex-column ProductCard'>
                             <div className='col-12 imgBox rounded overflow-hidden'>
                                 <img className='img-fluid h-100 w-100' src={product.thumbnail} alt='img' />
                                 <div className='Overview'>
