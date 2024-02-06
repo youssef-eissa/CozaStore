@@ -39,7 +39,7 @@ function Search() {
                 SearchRef.current.style.top = '0'
                 SearchRef.current.style.transition='0.5s'
             } else {
-                SearchRef.current.style.top = '-100%'
+                SearchRef.current.style.top = '-200%'
                 SearchRef.current.style.transition='0.5s'
         }
         }
