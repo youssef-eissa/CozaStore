@@ -32,10 +32,10 @@ function Footer() {
                     <div className='col-12 d-flex flex-column flex-md-row FooterBoxes'>
                         <div className='col-md-3 col-12 d-flex flex-column'>
                             <h1 className='mb-4'>Categories</h1>
-                            <Link onClick={NavigateToShop} to='/shop'>All Categories</Link>
-                            <Link onClick={NavigateToShop} to='/shop'>Women</Link>
-                            <Link onClick={NavigateToShop} to='/ shop'>Men</Link>
-                            <Link onClick={NavigateToShop} to='/shop'>Accessories</Link>
+                            <Link reloadDocument onClick={NavigateToShop} to='/shop'>All Categories</Link>
+                            <Link reloadDocument onClick={NavigateToShop} to='/shop'>Women</Link>
+                            <Link reloadDocument onClick={NavigateToShop} to='/ shop'>Men</Link>
+                            <Link reloadDocument onClick={NavigateToShop} to='/shop'>Accessories</Link>
                         </div>
                         <div className='col-md-3 col-12 d-flex flex-column'>
                             <h1 className='mb-4'>Help</h1>

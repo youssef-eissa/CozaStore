@@ -21,7 +21,7 @@ const dispatch=useDispatch()
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
     speed: 1000,
     afterChange: (c: number) => setCurrent(c),
@@ -156,7 +156,7 @@ const dispatch=useDispatch()
                                     animate={current === 0 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link onClick={(e) => handleNavigation(e,'Women')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
+                                <Link reloadDocument onClick={(e) => handleNavigation(e,'Women')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>
@@ -180,7 +180,7 @@ const dispatch=useDispatch()
                                     animate={current === 1 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link onClick={(e) => handleNavigation(e,'Men')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
+                                <Link reloadDocument onClick={(e) => handleNavigation(e,'Men')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>
@@ -204,7 +204,7 @@ const dispatch=useDispatch()
                                     animate={current === 2 ? 'linkAnimate' : 'linkStart'}
                                     transition={{ duration: 0.5,delay:1 }}
                                 >
-                                <Link onClick={(e) => handleNavigation(e,'Accessories')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
+                                <Link reloadDocument onClick={(e) => handleNavigation(e,'Accessories')} className="ShopNow py-2 px-4" to='/shop'>Shop Now</Link>
 
                                 </motion.div>
                             </div>
