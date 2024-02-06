@@ -62,7 +62,7 @@ function Products() {
                                 <h1>Women</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link onClick={()=>NavigateToShop('Women')} to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link reloadDocument onClick={()=>NavigateToShop('Women')} to='/' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>
@@ -78,7 +78,7 @@ function Products() {
                                 <h1>Men</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link onClick={()=>NavigateToShop('Men')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link reloadDocument onClick={()=>NavigateToShop('Men')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>
@@ -94,7 +94,7 @@ function Products() {
                                 <h1>Accessories</h1>
                             <span>Spring 2024</span>
                             </div>
-                            <Link onClick={()=>NavigateToShop('Accessories')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
+                            <Link reloadDocument onClick={()=>NavigateToShop('Accessories')} to='/shop' className='d-flex align-self-start flex-column justify-content-end align-items-center '>
                                     <div>Shop Now</div>
                                     <div className='bar'></div>
                             </Link>

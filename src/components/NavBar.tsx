@@ -64,21 +64,21 @@ function NavBar() {
                     </div>
                 </div>
                 <div ref={NavBarRef} className='col-12 NavBar justify-content-md-center justify-content-between d-flex p-0 px-3 px-md-0 '>
-                    <Link to='/' className='col-md-2 col-4 logoCon d-flex align-items-center '>
+                    <Link reloadDocument to='/' className='col-md-2 col-4 logoCon d-flex align-items-center '>
                         <img style={{cursor:'pointer'}}   alt='logo' className='img-fluid' src={logo}/>
                     </Link>
                     <div className='col-5 d-none d-md-flex'>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>Home</Link>
+                        <Link reloadDocument style={location.pathname === '/' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/'>Home</Link>
                         </div>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/shop' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/shop'>shop</Link>
+                        <Link reloadDocument style={location.pathname === '/shop' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/shop'>shop</Link>
                         </div>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/about'>about</Link>
+                        <Link reloadDocument style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/about'>about</Link>
                         </div>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/contact'>contact</Link>
+                        <Link reloadDocument style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={()=>window.scrollTo(0,0)} className='NavLink' to='/contact'>contact</Link>
                         </div>
                     </div>
                     <div className='col-3 icons d-flex align-items-center justify-content-end'>

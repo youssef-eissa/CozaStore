@@ -21,16 +21,16 @@ function MenuAnimation() {
     <Drawer width={300} title="Menu" onClose={onClose} open={open}>
         <div  className='col-12 MobileMenu d-flex flex-column justify-content-center h-100'>
                         <div className='p-3  '>
-                        <Link style={location.pathname === '/' ? { color: '#007bff' } : { color: '#333333' }} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink ' to='/'>Home</Link>
+                        <Link reloadDocument style={location.pathname === '/' ? { color: '#007bff' } : { color: '#333333' }} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink ' to='/'>Home</Link>
                         </div>
                         <div className='p-3 '>
-                        <Link style={location.pathname === '/shop' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}}className='NavLink' to='/shop'>shop</Link>
+                        <Link reloadDocument style={location.pathname === '/shop' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}}className='NavLink' to='/shop'>shop</Link>
                         </div>
                         <div className='p-3 '>
-                        <Link style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink' to='/about'>about</Link>
+                        <Link reloadDocument style={location.pathname === '/about' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink' to='/about'>about</Link>
                         </div>
                         <div className='p-3'>
-                        <Link style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink' to='/contact'>contact</Link>
+                        <Link reloadDocument style={location.pathname === '/contact' ? {color:'#007bff'} : {color:'#333333'}} onClick={() => { window.scrollTo(0, 0); onClose()}} className='NavLink' to='/contact'>contact</Link>
                         </div>
                     </div>
         </Drawer>
