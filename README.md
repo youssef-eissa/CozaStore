@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# COZA Store E-commerce website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An integrated API website with login authentication for shopping online store and allow users to discover all products by categories and ability to show information of every product separately.
 
-## Available Scripts
+# Api sources:
 
-In the project directory, you can run:
+- https://dummyjson.com/products for Products (products are filtered according to website demands)
+- https://dummyjson.com/users for Users
 
-### `npm start`
+# About the website
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+GamEra games online Website includes the following pages:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Home page
+- Games Page
+- Single game Page
+- Footer
+- Loader made by me
 
-### `npm test`
+# Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Typescript
+- React Query
+- React
+- Redux
+- Bootstrap
+- ant.design
 
-### `npm run build`
+# Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img alt='signin' src="/screenshots/home1.png">
+<img alt='signup' src='/screenshots/home2.png'>
+<img alt='signup2' src='/screenshots/home3.png'>
+<img alt='home' src='/screenshots/home4.png'>
+<img alt='home' src='/screenshots/shop.png'>
+<img alt='home' src='/screenshots/about1.png'>
+<img alt='home' src='/screenshots/about2.png'>
+<img alt='home' src='/screenshots/contact1.png'>
+<img alt='home' src='/screenshots/contact2.png'>
+<img alt='home' src='/screenshots/search.png'>
+<img alt='home' src='/screenshots/login.png'>
+<img alt='home' src='/screenshots/overview.png'>
+<img alt='home' src='/screenshots/cart.png'>
+<img alt='home' src='/screenshots/checkout.png'>
+<img alt='home' src='/screenshots/profile.png'>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Project Link
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+https://cozastore-red.vercel.app/
