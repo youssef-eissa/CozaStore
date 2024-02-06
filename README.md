@@ -5,6 +5,7 @@ An integrated API website with login authentication for shopping online store an
 # Api sources:
 
 - https://dummyjson.com/products for Products (products are filtered according to website demands)
+
 - https://dummyjson.com/users for Users
 
 # About the website
@@ -12,19 +13,28 @@ An integrated API website with login authentication for shopping online store an
 GamEra games online Website includes the following pages:
 
 - Home page
-- Games Page
-- Single game Page
+- Shop Page
+- Overview Page
+- Contact Page
+- About Page
+- Cart Bar
+- Menu Bar
+- Checkout Bar
+- Profile Bar
 - Footer
-- Loader made by me
 
 # Technologies Used
 
 - Typescript
-- React Query
 - React
+- React Query
+- React Query Table
 - Redux
 - Bootstrap
-- ant.design
+- Ant.design
+- Styled Components
+- MUI Components
+- React Icons
 
 # Screenshots
 
